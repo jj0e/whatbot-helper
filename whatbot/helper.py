@@ -72,8 +72,8 @@ class Helper:
         self.billing_db = billing_db_path
         self.groups_db = groups_db_path
         self.tasks_db = tasks_db_path
-        open(self.groups_db, "w+")
-        open(self.tasks_db, "w+")
+        open(self.groups_db, "w+", encoding="utf8")
+        open(self.tasks_db, "w+", encoding="utf8")
 
     def get_billing_id(self, billing_name):
         for profile in open(self.billing_db):
@@ -104,7 +104,7 @@ class Helper:
             "proxySetId": "none"
         }
 
-        with open(self.groups_db, "a+") as f:
+        with open(self.groups_db, "a+", encoding="utf8") as f:
             json.dump(group, f)
             f.write("\n")
 
@@ -115,7 +115,7 @@ class Helper:
             group_found = False
 
             # Check to see if the group is already made
-            for group in open(self.groups_db):
+            for group in open(self.groups_db, encoding="utf8"):
                 g = json.loads(group)
                 if task["name"] == g["name"]:
                     group_found = True
@@ -132,7 +132,7 @@ class Helper:
                         "enabled": True
                     }
 
-                    with open(self.tasks_db, "a+") as f:
+                    with open(self.tasks_db, "a+", encoding="utf8") as f:
                         json.dump(task_data, f)
                         f.write("\n")
 
@@ -152,6 +152,6 @@ class Helper:
                     "enabled": True
                 }
 
-                with open(self.tasks_db, "a+") as f:
+                with open(self.tasks_db, "a+", encoding="utf8") as f:
                     json.dump(task_data, f)
                     f.write("\n")
