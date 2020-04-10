@@ -104,7 +104,7 @@ class Helper:
             "proxySetId": "none"
         }
 
-        with open(self.groups_db, "a+", encoding="utf8") as f:
+        with open(self.groups_db, "a+", encoding="utf8", errors="ignore") as f:
             json.dump(group, f)
             f.write("\n")
 
@@ -115,7 +115,7 @@ class Helper:
             group_found = False
 
             # Check to see if the group is already made
-            for group in open(self.groups_db, encoding="utf8"):
+            for group in open(self.groups_db, encoding="utf8", errors="ignore"):
                 g = json.loads(group)
                 if task["name"] == g["name"]:
                     group_found = True
@@ -132,7 +132,7 @@ class Helper:
                         "enabled": True
                     }
 
-                    with open(self.tasks_db, "a+", encoding="utf8") as f:
+                    with open(self.tasks_db, "a+", encoding="utf8", errors="ignore") as f:
                         json.dump(task_data, f)
                         f.write("\n")
 
@@ -152,6 +152,6 @@ class Helper:
                     "enabled": True
                 }
 
-                with open(self.tasks_db, "a+", encoding="utf8") as f:
+                with open(self.tasks_db, "a+", encoding="utf8", errors="ignore") as f:
                     json.dump(task_data, f)
                     f.write("\n")
