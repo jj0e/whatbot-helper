@@ -94,7 +94,7 @@ class Helper:
             "_id": ''.join(random.choices(string.ascii_letters + string.digits, k=16)),
             "advanced": False,
             "customScrapers": [],
-            "keywordsLink": sku,
+            "keywordsLink": str(sku),
             "name": name,
             "oneCheckoutPerProfile": eval(one_checkout),
             "preloadHeadstart": str(int(head_start)),
