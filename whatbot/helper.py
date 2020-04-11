@@ -11,6 +11,7 @@ import xlrd
 import random
 import string
 import json
+import math
 
 
 # Returns all tasks in provided xlsx file
@@ -94,7 +95,7 @@ class Helper:
             "_id": ''.join(random.choices(string.ascii_letters + string.digits, k=16)),
             "advanced": False,
             "customScrapers": [],
-            "keywordsLink": str(sku),
+            "keywordsLink": str(math.trunc(sku)),
             "name": name,
             "oneCheckoutPerProfile": eval(one_checkout),
             "preloadHeadstart": str(int(head_start)),
