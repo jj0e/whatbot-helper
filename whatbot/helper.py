@@ -81,7 +81,7 @@ class Helper:
             if p["name"] == billing_name:
                 return p["_id"]
 
-        raise Exception("Provided billing name does not exist in billing.db")
+        raise Exception(f"Billing name: {billing_name} does not exist in billing.db")
 
     def create_group(self, task):
         name = task["name"]
