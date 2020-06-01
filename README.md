@@ -36,11 +36,11 @@ I mention this because it is important to understand what is needed for whatbot 
 Operating System | Path
 ---------------- | ----
 MacOS | Library/Application Support/WhatBot/billing.db
-Windows | TBD
+Windows | %appdata%/WhatBot
 
 _This folder is very important so make sure you can locate it, you will need it again._
 
-Drag the billing.db file into the ``config`` folder and open you terminal or cmd and type:
+Drag the billing.db and your task xlsx files into the ``config`` folder and open you terminal or cmd and type:
 ```python
 python3 main.py
 ```
